@@ -1,0 +1,165 @@
+{
+  "version": 4,
+  "targets": {
+    "net48": {
+      "EntityFramework/6.5.2": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "Personenverwaltung.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.5.2"
+        },
+        "compile": {
+          "bin/placeholder/Personenverwaltung.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Personenverwaltung.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EntityFramework/6.5.2": {
+      "sha512": "8iOcnaKcgkWh35s8EhknnENNwwqvrBJ7jeNbQITbGo1mIeIOhGPfVdNOXZ3Y496T6e6wfXvz0WeXlgMdcgVYSA==",
+      "type": "package",
+      "path": "entityframework/6.5.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "build/EntityFramework.DefaultItems.props",
+        "build/EntityFramework.props",
+        "build/EntityFramework.targets",
+        "build/Microsoft.Data.Entity.Build.Tasks.dll",
+        "build/net6.0/EntityFramework.props",
+        "build/net6.0/EntityFramework.targets",
+        "buildTransitive/EntityFramework.props",
+        "buildTransitive/EntityFramework.targets",
+        "buildTransitive/net6.0/EntityFramework.props",
+        "buildTransitive/net6.0/EntityFramework.targets",
+        "content/net40/App.config.install.xdt",
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.install.xdt",
+        "content/net40/Web.config.transform",
+        "entityframework.6.5.2.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "lib/netstandard2.1/EntityFramework.SqlServer.dll",
+        "lib/netstandard2.1/EntityFramework.SqlServer.xml",
+        "lib/netstandard2.1/EntityFramework.dll",
+        "lib/netstandard2.1/EntityFramework.xml",
+        "tools/EntityFramework6.PS2.psd1",
+        "tools/EntityFramework6.PS2.psm1",
+        "tools/EntityFramework6.psd1",
+        "tools/EntityFramework6.psm1",
+        "tools/about_EntityFramework6.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/net40/any/ef6.exe",
+        "tools/net40/win-arm64/ef6.exe",
+        "tools/net40/win-x86/ef6.exe",
+        "tools/net45/any/ef6.exe",
+        "tools/net45/win-arm64/ef6.exe",
+        "tools/net45/win-x86/ef6.exe",
+        "tools/net6.0/any/ef6.dll",
+        "tools/net6.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "Personenverwaltung.Data/1.0.0": {
+      "type": "project",
+      "path": "../Personenverwaltung.Data/Personenverwaltung.Data.csproj",
+      "msbuildProject": "../Personenverwaltung.Data/Personenverwaltung.Data.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net48": [
+      "Personenverwaltung.Data >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\user2\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\user2\\RiderProjects\\SchleupenAC\\Personenverwaltung.Logic\\Personenverwaltung.Logic.csproj",
+      "projectName": "Personenverwaltung.Logic",
+      "projectPath": "C:\\Users\\user2\\RiderProjects\\SchleupenAC\\Personenverwaltung.Logic\\Personenverwaltung.Logic.csproj",
+      "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user2\\RiderProjects\\SchleupenAC\\Personenverwaltung.Logic\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net48"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net48": {
+          "framework": "net48",
+          "targetAlias": "net48",
+          "projectReferences": {
+            "C:\\Users\\user2\\RiderProjects\\SchleupenAC\\Personenverwaltung.Data\\Personenverwaltung.Data.csproj": {
+              "projectPath": "C:\\Users\\user2\\RiderProjects\\SchleupenAC\\Personenverwaltung.Data\\Personenverwaltung.Data.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.400"
+    },
+    "frameworks": {
+      "net48": {
+        "framework": "net48",
+        "targetAlias": "net48",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

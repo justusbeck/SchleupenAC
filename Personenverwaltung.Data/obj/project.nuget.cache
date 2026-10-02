@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bm27psAt98w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user2\\RiderProjects\\SchleupenAC\\Personenverwaltung.Data\\Personenverwaltung.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user2\\.nuget\\packages\\entityframework\\6.5.2\\entityframework.6.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

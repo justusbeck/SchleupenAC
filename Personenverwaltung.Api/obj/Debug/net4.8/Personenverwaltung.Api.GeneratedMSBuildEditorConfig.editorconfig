@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = Personenverwaltung.Api
+build_property.ProjectDir = C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Api\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

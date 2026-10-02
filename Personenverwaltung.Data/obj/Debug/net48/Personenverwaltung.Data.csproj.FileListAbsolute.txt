@@ -1,0 +1,13 @@
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.csproj.AssemblyReference.cache
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.AssemblyInfoInputs.cache
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.AssemblyInfo.cs
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.csproj.CoreCompileInputs.cache
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.sourcelink.json
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\bin\Debug\net48\Personenverwaltung.Data.dll
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\bin\Debug\net48\Personenverwaltung.Data.pdb
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.dll
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personenverwaltung.Data.pdb
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\bin\Debug\net48\EntityFramework.SqlServer.dll
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\bin\Debug\net48\EntityFramework.dll
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Data\obj\Debug\net48\Personen.45D36BCA.Up2Date

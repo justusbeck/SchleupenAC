@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Personenverwaltung.Api/Personenverwaltung.Api.csproj" />
+  <Project Path="Personenverwaltung.Client/Personenverwaltung.Client.csproj" />
+  <Project Path="Personenverwaltung.Data/Personenverwaltung.Data.csproj" />
+  <Project Path="Personenverwaltung.Logic/Personenverwaltung.Logic.csproj" />
+</Solution>
