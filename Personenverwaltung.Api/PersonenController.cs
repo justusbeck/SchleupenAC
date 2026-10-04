@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web.Http;
+using Personenverwaltung.Data;
 using Personenverwaltung.Logic;
 
 namespace Personenverwaltung.Api
@@ -23,6 +26,25 @@ namespace Personenverwaltung.Api
             
             if (person == null) return NotFound();
             return Ok(person);
+        }
+
+        [HttpPut, Route("{id:int}")]
+        public async Task<IHttpActionResult> Put(int id, [FromBody] PersonChangeDto personChangeDto)
+        {
+            if (personChangeDto == null) return BadRequest("Es wurden keine Daten übermittelt");
+
+            try
+            {
+                bool found = await _personService.ChangeNameAsync(id, personChangeDto.Name, personChangeDto.Vorname);
+                
+                if (!found) return NotFound();
+
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }

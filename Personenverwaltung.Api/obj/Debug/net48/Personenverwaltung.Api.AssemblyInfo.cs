@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Personenverwaltung.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6adfb782025f0080207c5e289c8616fd44b9bc77")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a231a19a8b761d89a3736b6188c6553193e5b5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Personenverwaltung.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Personenverwaltung.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

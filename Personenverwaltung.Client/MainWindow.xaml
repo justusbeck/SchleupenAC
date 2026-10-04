@@ -11,17 +11,19 @@
             <TextBlock Text="Name:" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <TextBox x:Name="SuchTextBox" Width="200" VerticalAlignment="Center" Margin="0,0,10,0"/>
             <Button x:Name="LadePersonen" Content="Personen laden" Padding="12,4" Click="LadenButton_Click"/>
+            <Button x:Name="SpeicherPersonen" Content="Änderung speichern" Padding="12,4" Click="SpeichernButton_Click"/>
         </StackPanel>
         
         <DataGrid x:Name="PersonenGrid"
                   AutoGenerateColumns="False"
-                  IsReadOnly="True"
+                  IsReadOnly="False"
                   CanUserAddRows="False"
+                  CanUserDeleteRows="False"
                   SelectionMode="Single"
                   SelectionChanged="PersonenGrid_OnSelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Vorname" Width="*" Binding="{Binding Vorname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Vorname" Width="*" Binding="{Binding Vorname, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Geburtsdatum" Width="*" Binding="{Binding Geburtsdatum, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Großbuchstaben" Width="*" Binding="{Binding Großbuchstaben}"></DataGridTextColumn>
                 

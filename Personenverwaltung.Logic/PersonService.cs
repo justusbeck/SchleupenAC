@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -70,6 +71,28 @@ namespace Personenverwaltung.Logic
                         })
                         .ToList()
                 };
+            }
+        }
+        
+        public async Task<bool> ChangeNameAsync(int id, string name, string vorname)
+        {
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(vorname))
+                throw new ArgumentException("Name und Vorname dürfen nicht leer sein.");
+        
+            name = name.Trim();
+            vorname = vorname.Trim();
+
+            using (var db = new PersonenDbContext())
+            {
+                var person = await db.Personen.FindAsync(id);
+
+                if (person == null) return false;
+            
+                person.Name = name;
+                person.Vorname = vorname;
+
+                await db.SaveChangesAsync();
+                return true;
             }
         }
     }
