@@ -28,7 +28,7 @@ namespace Personenverwaltung.Client
 
             try
             {
-                string url = "api/person";
+                string url = "api/personen";
 
                 if (!string.IsNullOrWhiteSpace(SuchTextBox.Text))
                     url += "?name=" + Uri.EscapeDataString(SuchTextBox.Text.Trim());
@@ -78,7 +78,7 @@ namespace Personenverwaltung.Client
                     string json = JsonConvert.SerializeObject(new { personToChange.Id, personToChange.Name, personToChange.Vorname });
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    HttpResponseMessage response = await HttpClient.PutAsync($"api/person/{personToChange.Id}", content);
+                    HttpResponseMessage response = await HttpClient.PutAsync($"api/personen/{personToChange.Id}", content);
 
                     if (!response.IsSuccessStatusCode)
                     {
@@ -133,7 +133,7 @@ namespace Personenverwaltung.Client
 
             try
             {
-                string json = await HttpClient.GetStringAsync($"api/person/{person.Id}");
+                string json = await HttpClient.GetStringAsync($"api/personen/{person.Id}");
                 var detail = JsonConvert.DeserializeObject<PersonDetailDto>(json);
                 ShowDetailWindow(detail);
             }
