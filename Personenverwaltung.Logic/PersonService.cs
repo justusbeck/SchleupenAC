@@ -30,7 +30,6 @@ namespace Personenverwaltung.Logic
                         Name = p.Name,
                         Vorname = p.Vorname,
                         Geburtsdatum = p.Geburtsdatum,
-                        Großbuchstaben = p.Großbuchstaben
                     })
                     .ToListAsync();
             }

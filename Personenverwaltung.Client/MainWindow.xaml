@@ -25,7 +25,6 @@
                 <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Vorname" Width="*" Binding="{Binding Vorname, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Geburtsdatum" Width="*" Binding="{Binding Geburtsdatum, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Großbuchstaben" Width="*" Binding="{Binding Großbuchstaben}"></DataGridTextColumn>
                 
             </DataGrid.Columns>
         </DataGrid>
