@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Personenverwaltung.Logic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceb80652161c252dc9f0ee4fc45150603946a8a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fd3c2435008061e1bbbffcca6cddd293c57fd5f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Personenverwaltung.Logic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Personenverwaltung.Logic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

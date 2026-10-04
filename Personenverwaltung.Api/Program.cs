@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.Owin.Hosting;
 using Personenverwaltung.Data;
 
 namespace Personenverwaltung.Api
@@ -8,19 +9,13 @@ namespace Personenverwaltung.Api
     {
         private static void Main()
         {
-            try
-            {
-                using (var db = new PersonenDbContext())
-                {
-                    Console.WriteLine("Anzahl Personen: " + db.Personen.Count());
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
+            const string url = "http://localhost:5050/";
 
-            Console.ReadLine();
+            using (WebApp.Start<Startup>(url))
+            {
+                Console.WriteLine("API läuft auf " + url);
+                Console.ReadLine();
+            }
         }
     }
 }
