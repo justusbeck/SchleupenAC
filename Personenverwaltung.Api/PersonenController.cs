@@ -15,8 +15,8 @@ namespace Personenverwaltung.Api
         [HttpGet, Route("")]
         public async Task<IHttpActionResult> Get(string name = null)
         {
-            var personen = await _personService.SuchenAsync(name);
-            return Ok(personen);
+            var person = await _personService.SuchenAsync(name);
+            return Ok(person);
         }
 
         [HttpGet, Route("{id:int}")]

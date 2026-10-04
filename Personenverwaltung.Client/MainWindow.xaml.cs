@@ -22,13 +22,13 @@ namespace Personenverwaltung.Client
             InitializeComponent();
         }
 
-        private async void LadenButton_Click(object sender, RoutedEventArgs e)
+        private async void LoadButton_Click(object sender, RoutedEventArgs e)
         {
-            LadePersonen.IsEnabled = false;
+            LoadPerson.IsEnabled = false;
 
             try
             {
-                string url = "api/personen";
+                string url = "api/person";
 
                 if (!string.IsNullOrWhiteSpace(SuchTextBox.Text))
                     url += "?name=" + Uri.EscapeDataString(SuchTextBox.Text.Trim());
@@ -36,30 +36,30 @@ namespace Personenverwaltung.Client
                 if (_detailWindow != null) _detailWindow.Close();
 
                 string json = await HttpClient.GetStringAsync(url);
-                var personen  = JsonConvert.DeserializeObject<List<PersonDto>>(json);
+                var person  = JsonConvert.DeserializeObject<List<PersonDto>>(json);
                 
-                PersonenGrid.ItemsSource = personen;
-                MerkeOriginale(personen);
+                PersonenGrid.ItemsSource = person;
+                KeepOriginal(person);
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
-            finally { LadePersonen.IsEnabled = true; }
+            finally { LoadPerson.IsEnabled = true; }
         }
 
-        private async void SpeichernButton_Click(object sender, RoutedEventArgs e)
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             PersonenGrid.CommitEdit(DataGridEditingUnit.Row, true);
             
-            var personen = PersonenGrid.ItemsSource as List<PersonDto>;
+            var person = PersonenGrid.ItemsSource as List<PersonDto>;
 
-            if (personen == null)
+            if (person == null)
                 MessageBox.Show("Es wurden noch keine Personen geladen.",
                     "Hinweis", MessageBoxButton.OK, MessageBoxImage.Information);
           
-            var changed = personen.Where(IsChanged).ToList();
+            var changed = person.Where(IsChanged).ToList();
             
             if(changed.Count == 0)
                 MessageBox.Show("Es gibt keine Änderungen zu speichern.",
@@ -69,30 +69,27 @@ namespace Personenverwaltung.Client
                 MessageBox.Show("Name und Vorname dürfen nicht leer sein.",
                     "Hinweis", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-            SpeicherPersonen.IsEnabled = false;
+            SavePerson.IsEnabled = false;
 
             try
             {
-                foreach (var person in changed)
+                foreach (var personToChange in changed)
                 {
-                    string json = JsonConvert.SerializeObject(new { person.Id, person.Name, person.Vorname });
+                    string json = JsonConvert.SerializeObject(new { personToChange.Id, personToChange.Name, personToChange.Vorname });
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                    HttpResponseMessage response = await HttpClient.PutAsync($"api/personen/{person.Id}", content);
+                    HttpResponseMessage response = await HttpClient.PutAsync($"api/person/{personToChange.Id}", content);
 
                     if (!response.IsSuccessStatusCode)
                     {
                         string error = await response.Content.ReadAsStringAsync();
-                        MessageBox.Show("Speichern von " + person.Vorname + " " + person.Name + " " + "fehlgeschlagen\n"
+                        MessageBox.Show("Speichern von " + personToChange.Vorname + " " + personToChange.Name + " " + "fehlgeschlagen\n"
                                         + (int)response.StatusCode + " " + error, "Fehler", MessageBoxButton.OK,
                             MessageBoxImage.Error);
                         return;
                     }
 
-                    _original[person.Id] = Copy(person);
-
-                    MessageBox.Show(changed.Count + " Änderung(en) gespeichert.",
-                        "Speichern", MessageBoxButton.OK, MessageBoxImage.Information);
+                    _original[personToChange.Id] = Copy(personToChange);
                 }
             }
             catch (Exception exception)
@@ -102,13 +99,13 @@ namespace Personenverwaltung.Client
             }
             finally
             {
-                SpeicherPersonen.IsEnabled = true;
+                SavePerson.IsEnabled = true;
             }
         }
         
-        private void MerkeOriginale(List<PersonDto> personen)
+        private void KeepOriginal(List<PersonDto> person)
         {
-            _original = personen.ToDictionary(p => p.Id, Copy);
+            _original = person.ToDictionary(p => p.Id, Copy);
         }
         
         private bool IsChanged(PersonDto person)
@@ -136,7 +133,7 @@ namespace Personenverwaltung.Client
 
             try
             {
-                string json = await HttpClient.GetStringAsync($"api/personen/{person.Id}");
+                string json = await HttpClient.GetStringAsync($"api/person/{person.Id}");
                 var detail = JsonConvert.DeserializeObject<PersonDetailDto>(json);
                 ShowDetailWindow(detail);
             }

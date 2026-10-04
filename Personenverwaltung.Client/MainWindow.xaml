@@ -10,8 +10,8 @@
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="Name:" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <TextBox x:Name="SuchTextBox" Width="200" VerticalAlignment="Center" Margin="0,0,10,0"/>
-            <Button x:Name="LadePersonen" Content="Personen laden" Padding="12,4" Click="LadenButton_Click"/>
-            <Button x:Name="SpeicherPersonen" Content="Änderung speichern" Padding="12,4" Click="SpeichernButton_Click"/>
+            <Button x:Name="LoadPerson" Content="Personen laden" Padding="12,4" Click="LoadButton_Click"/>
+            <Button x:Name="SavePerson" Content="Änderung speichern" Padding="12,4" Click="SaveButton_Click"/>
         </StackPanel>
         
         <DataGrid x:Name="PersonenGrid"
