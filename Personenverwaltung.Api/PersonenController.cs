@@ -10,9 +10,9 @@ namespace Personenverwaltung.Api
         private readonly PersonService _personService = new PersonService();
 
         [HttpGet, Route("")]
-        public async Task<IHttpActionResult> Get()
+        public async Task<IHttpActionResult> Get(string name = null)
         {
-            var personen = await _personService.GetAllAsync();
+            var personen = await _personService.SuchenAsync(name);
             return Ok(personen);
         }
     }

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Personalverwaltung" Height="450" Width="800">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="0,10,0,0">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Name:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="SuchTextBox" Width="200" VerticalAlignment="Center" Margin="0,0,10,0"/>
             <Button x:Name="LadePersonen" Content="Personen laden" Padding="12,4" Click="LadenButton_Click"/>
         </StackPanel>
         

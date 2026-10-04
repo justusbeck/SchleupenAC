@@ -8,11 +8,20 @@ namespace Personenverwaltung.Logic
 {
     public class PersonService
     {
-        public async Task<List<PersonDTO>> GetAllAsync()
+        public async Task<List<PersonDTO>> SuchenAsync(string name)
         {
             using (var db = new PersonenDbContext())
             {
-                return await db.Personen
+                IQueryable<Person> query = db.Personen;
+
+                if (!string.IsNullOrWhiteSpace(name))
+                {
+                    string suchbegriff = name.Trim();
+                    query = query.Where(p => p.Name.Contains(suchbegriff)
+                                                || p.Vorname.Contains(suchbegriff));
+                }
+                
+                return await query
                     .OrderBy(p => p.Name)
                     .Select(p => new PersonDTO
                     {

@@ -19,12 +19,16 @@ namespace Personenverwaltung.Client
 
         private async void LadenButton_Click(object sender, RoutedEventArgs e)
         {
-            //LadePersonen.IsEnabled = true;
             LadePersonen.IsEnabled = false;
 
             try
             {
-                string json = await HttpClient.GetStringAsync("api/personen");
+                string url = "api/personen";
+
+                if (!string.IsNullOrWhiteSpace(SuchTextBox.Text))
+                    url += "?name=" + Uri.EscapeDataString(SuchTextBox.Text.Trim());
+                
+                string json = await HttpClient.GetStringAsync(url);
                 PersonenGrid.ItemsSource = JsonConvert.DeserializeObject<List<PersonDto>>(json);
             }
             catch (Exception ex)
