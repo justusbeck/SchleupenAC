@@ -8,7 +8,7 @@ namespace Personenverwaltung.Logic
 {
     public class PersonService
     {
-        public async Task<List<PersonDTO>> SuchenAsync(string name)
+        public async Task<List<PersonDto>> SuchenAsync(string name)
         {
             using (var db = new PersonenDbContext())
             {
@@ -23,7 +23,7 @@ namespace Personenverwaltung.Logic
                 
                 return await query
                     .OrderBy(p => p.Name)
-                    .Select(p => new PersonDTO
+                    .Select(p => new PersonDto
                     {
                         Id = p.Id,
                         Name = p.Name,

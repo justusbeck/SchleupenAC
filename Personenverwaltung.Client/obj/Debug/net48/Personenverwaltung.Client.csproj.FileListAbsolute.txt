@@ -17,3 +17,5 @@ C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Client\obj\Debug\net
 C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Client\obj\Debug\net48\Personenverwaltung.Client.pdb
 C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Client\bin\Debug\net48\Newtonsoft.Json.dll
 C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Client\obj\Debug\net48\Personen.BC1FFB55.Up2Date
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Client\obj\Debug\net48\DetailWindow.g.cs
+C:\Users\user2\RiderProjects\SchleupenAC\Personenverwaltung.Client\obj\Debug\net48\DetailWindow.baml

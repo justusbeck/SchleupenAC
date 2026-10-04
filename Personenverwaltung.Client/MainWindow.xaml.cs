@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Windows;
+using System.Windows.Controls;
 using Newtonsoft.Json;
 
 namespace Personenverwaltung.Client
 {
     public partial class MainWindow : Window
     {
-        private static readonly HttpClient HttpClient = new HttpClient
-        {
-            BaseAddress = new Uri("http://localhost:5050/")
-        };
+        private static readonly HttpClient HttpClient = new HttpClient { BaseAddress = new Uri("http://localhost:5050/") };
+        
+        private DetailWindow _detailWindow;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +41,24 @@ namespace Personenverwaltung.Client
             {
                 LadePersonen.IsEnabled = true;
             }
+        }
+
+        private void PersonenGrid_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PersonenGrid.SelectedItem == null) return;
+
+            if (_detailWindow == null)
+            {
+                _detailWindow = new DetailWindow { Owner = this };
+                
+                _detailWindow.Closed += (s, args) =>
+                {
+                    _detailWindow = null;
+                    PersonenGrid.SelectedItem =  null;
+                };
+            }
+            
+            if (!_detailWindow.IsVisible) _detailWindow.Show();
         }
     }
 }

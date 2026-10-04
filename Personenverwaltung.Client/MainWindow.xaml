@@ -16,7 +16,9 @@
         <DataGrid x:Name="PersonenGrid"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  CanUserAddRows="False">
+                  CanUserAddRows="False"
+                  SelectionMode="Single"
+                  SelectionChanged="PersonenGrid_OnSelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Vorname" Width="*" Binding="{Binding Vorname}"></DataGridTextColumn>
