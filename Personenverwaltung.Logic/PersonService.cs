@@ -34,5 +34,43 @@ namespace Personenverwaltung.Logic
                     .ToListAsync();
             }
         }
+
+        public async Task<PersonDetailDto> GetDetailAsync(int id)
+        {
+            using (var db = new PersonenDbContext())
+            {
+                var person = await db.Personen
+                    .Include(p => p.Anschriften)
+                    .Include(p => p.Telefonverbindungen)
+                    .FirstAsync(p => p.Id == id);
+                
+                if (person == null) return null;
+
+                return new PersonDetailDto
+                {
+                    Id = person.Id,
+                    Name = person.Name,
+                    Vorname = person.Vorname,
+                    Geburtsdatum = person.Geburtsdatum,
+                    Anschriften = person.Anschriften
+                        .Select(a => new AnschriftDto
+                        {
+                            Id = a.Id,
+                            Postleitzahl = a.Postleitzahl,
+                            Ort = a.Ort,
+                            Straße = a.Straße,
+                            Hausnummer = a.Hausnummer
+                        })
+                        .ToList(),
+                    Telefonverbindungen = person.Telefonverbindungen
+                        .Select(t => new TelefonverbindungDto
+                        {
+                            Id = t.Id,
+                            Nummer = t.Nummer
+                        })
+                        .ToList()
+                };
+            }
+        }
     }
 }

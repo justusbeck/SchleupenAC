@@ -9,6 +9,36 @@
         WindowStartupLocation="Manual"
         ShowInTaskbar="False">
     <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock FontSize="18" FontWeight="Bold">
+                <Run Text="{Binding Vorname, Mode=OneWay}" /><Run Text=" " /><Run Text="{Binding Name, Mode=OneWay}" />
+            </TextBlock>
+            <TextBlock Text="{Binding Geburtsdatum, StringFormat='Geboren am {0:dd.MM.yyyy}'}" />
+        </StackPanel>
+        
+        <TextBlock Grid.Row="1" Text="Anschrift" FontWeight="Bold" Margin="0,0,0,5" />
+        <DataGrid Grid.Row="2"
+                  ItemsSource="{Binding Anschriften}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Straße" Width="2*" Binding="{Binding Straße}" />
+                <DataGridTextColumn Header="Nr." Width="2*" Binding="{Binding Hausnummer}" />
+                <DataGridTextColumn Header="PLZ" Width="*" Binding="{Binding Postleitzahl}" />
+                <DataGridTextColumn Header="Ort" Width="2*" Binding="{Binding Ort}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <TextBlock Grid.Row="3" Text="Telefonnummern" FontWeight="Bold" Margin="0,0,0, 5" />
+        <ListBox Grid.Row="4" ItemsSource="{Binding Telefonverbindungen}" DisplayMemberPath="Nummer"/>
     </Grid>
 </Window>

@@ -8,5 +8,10 @@ namespace Personenverwaltung.Client
         {
             InitializeComponent();
         }
+
+        public void ShowPersonDetails(PersonDetailDto personDetail)
+        {
+            DataContext = personDetail;
+        }
     }
 }

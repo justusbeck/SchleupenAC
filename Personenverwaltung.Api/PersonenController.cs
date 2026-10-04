@@ -15,5 +15,14 @@ namespace Personenverwaltung.Api
             var personen = await _personService.SuchenAsync(name);
             return Ok(personen);
         }
+
+        [HttpGet, Route("{id:int}")]
+        public async Task<IHttpActionResult> GetById(int id)
+        {
+            var person = await _personService.GetDetailAsync(id);
+            
+            if (person == null) return NotFound();
+            return Ok(person);
+        }
     }
 }
