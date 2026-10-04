@@ -1,0 +1,15 @@
+@"
+# Build-Ergebnisse
+[Bb]in/
+[Oo]bj/
+
+# Rider und Visual Studio
+.idea/
+.vs/
+*.user
+*.suo
+
+# NuGet
+packages/
+*.nupkg
+"@ | Set-Content .gitignore -Encoding ascii
