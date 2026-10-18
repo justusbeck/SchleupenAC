@@ -47,4 +47,30 @@ namespace Personenverwaltung.Api
             }
         }
     }
+/*
+    [RoutePrefix("api/Sicherung")]
+    public class SicherungCOntroller : ApiController
+    {
+        private readonly PersonService _personService = new PersonService();
+        
+        [HttpPut, Route("{id:int}")]
+        public async Task<IHttpActionResult> Put(int id, [FromBody] PersonChangeDto personChangeDto)
+        {
+            if (personChangeDto == null) return BadRequest("Es wurden keine Daten übermittelt");
+
+            try
+            {
+                bool found = await _personService.ChangeNameAsync(id, personChangeDto.Name, personChangeDto.Vorname);
+                
+                if (!found) return NotFound();
+
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+    }
 }
+*/

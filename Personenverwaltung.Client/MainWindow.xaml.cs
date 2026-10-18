@@ -79,7 +79,7 @@ namespace Personenverwaltung.Client
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                     HttpResponseMessage response = await HttpClient.PutAsync($"api/personen/{personToChange.Id}", content);
-
+                    //HttpResponseMessage response = await HttpClient.PutAsync($"api/sicherung/{personToChange.Id}", content);
                     if (!response.IsSuccessStatusCode)
                     {
                         string error = await response.Content.ReadAsStringAsync();
